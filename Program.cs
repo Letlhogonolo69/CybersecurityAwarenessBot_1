@@ -14,6 +14,8 @@ namespace CybersecurityAwarenessBot
             { "privacy", new List<string> { "Limit the personal info you share online.", "Review your privacy settings regularly.", "Use two-factor authentication for added security." } }
         };
 
+        static Dictionary<string, string> userMemory = new Dictionary<string, string>();
+
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -25,6 +27,7 @@ namespace CybersecurityAwarenessBot
             Console.Write("\nEnter your name: ");
             Console.ResetColor();
             string userName = Console.ReadLine();
+            userMemory["name"] = userName;
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"\nWelcome, {userName}! Let's keep you safe online.");
             Console.ResetColor();
@@ -39,7 +42,7 @@ namespace CybersecurityAwarenessBot
                 RespondToQuestion(userInput);
             }
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("\nThank you for using the Cybersecurity Awareness Bot. Stay safe!");
+            Console.WriteLine($"\nThank you for using the Cybersecurity Awareness Bot, {userMemory["name"]}! Stay safe!");
             Console.ResetColor();
         }
 
