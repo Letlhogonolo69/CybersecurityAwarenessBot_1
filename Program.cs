@@ -39,7 +39,7 @@ namespace CybersecurityAwarenessBot
                 Console.ResetColor();
                 string userInput = Console.ReadLine().ToLower();
                 if (userInput == "exit") break;
-                RespondToQuestion(userInput);
+                RespondToQuestion(userInput, userName);
             }
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine($"\nThank you for using the Cybersecurity Awareness Bot, {userMemory["name"]}! Stay safe!");
@@ -91,7 +91,7 @@ namespace CybersecurityAwarenessBot
             Console.ResetColor();
         }
 
-        static void RespondToQuestion(string userInput)
+        static void RespondToQuestion(string userInput, string userName)
         {
             foreach (var keyword in keywordResponses.Keys)
             {
@@ -100,7 +100,7 @@ namespace CybersecurityAwarenessBot
                     var responses = keywordResponses[keyword];
                     var random = new Random();
                     Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine(responses[random.Next(responses.Count)]);
+                    Console.WriteLine($"{userName}, {responses[random.Next(responses.Count)]}");
                     Console.ResetColor();
                     return;
                 }
