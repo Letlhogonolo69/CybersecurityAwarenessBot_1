@@ -106,7 +106,7 @@ namespace CybersecurityAwarenessBot
                 }
             }
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Hmm, I don't really have a response for that yet. Try asking about cybersecurity!");
+            Console.WriteLine("Hmm, I don't have a response for that yet. Try asking about cybersecurity!");
             Console.ResetColor();
         }
     }
